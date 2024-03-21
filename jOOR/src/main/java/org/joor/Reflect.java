@@ -295,8 +295,9 @@ public class Reflect {
         if (true)
             result = null;
         else
-        /* [/java-9] */
-        try {
+        
+        {
+            try {
             try {
                 Optional.class.getMethod("stream");
                 result = null;
@@ -316,6 +317,7 @@ public class Reflect {
         // Can no longer access the above in JDK 9
         catch (Throwable ignore) {
             result = null;
+        }
         }
 
         CACHED_LOOKUP_CONSTRUCTOR = result;
